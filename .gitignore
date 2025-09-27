@@ -1,0 +1,27 @@
+# Môi trường ảo của Python
+.venv/
+venv/
+env/
+
+# File chứa thông tin nhạy cảm
+.env
+.md
+
+# Các file cache và biên dịch của Python
+__pycache__/
+*.pyc
+
+# Các file của IDE
+.vscode/
+.idea/
+
+# File database SQLite (nếu bạn có dùng lúc đầu)
+*.sqlite3
+db.sqlite3
+
+# Thư mục chứa các file người dùng upload (media)
+# Chúng ta không đưa media lên Git, chúng sẽ được lưu ở nơi khác (như S3)
+media/
+
+# Thư mục chứa các file tĩnh được thu thập
+staticfiles/
