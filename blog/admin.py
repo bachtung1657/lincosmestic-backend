@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Post, Category
+from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -7,7 +8,8 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(SummernoteModelAdmin):
+    summernote_fields = ('content',)
     list_display = ('title', 'slug', 'author', 'status', 'created_at')
     list_filter = ('status', 'created_at', 'author', 'category')
     search_fields = ('title', 'content')

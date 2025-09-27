@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     # Thư viện bên thứ 3
     'rest_framework',
     'corsheaders',
-    'ckeditor',
+    # 'ckeditor', - Bản lỗi
+    'django_summernote',
     # Các app của chúng ta
     'core',
     'blog',

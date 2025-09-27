@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 from core.models import TimeStampedModel, ImageProcessingModel
-from ckeditor.fields import RichTextField 
+# from ckeditor.fields import RichTextField 
 
 class Category(TimeStampedModel):
     name = models.CharField(max_length=100, unique=True, verbose_name="Tên danh mục")
@@ -28,8 +28,8 @@ class Post(TimeStampedModel, ImageProcessingModel):
     title = models.CharField(max_length=200, verbose_name="Tiêu đề")
     slug = models.SlugField(max_length=220, unique=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts', verbose_name="Tác giả")
-    # content = models.TextField(verbose_name="Nội dung")
-    content = RichTextField(verbose_name="Nội dung")
+    content = models.TextField(verbose_name="Nội dung")
+    # content = RichTextField(verbose_name="Nội dung")
     excerpt = models.TextField(blank=True, verbose_name="Đoạn trích ngắn")
     
     # Kế thừa ImageProcessingModel sẽ tự động xử lý ảnh này
